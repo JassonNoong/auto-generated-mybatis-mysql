@@ -2,34 +2,34 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
+
 	<groupId>cn.nongdewang</groupId>
 	<artifactId>auto-generated-mybatis-mysql</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
-	<!--加入统一依赖包的版本控制  -->
-	<properties>  
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>  
-        <maven.compiler.source>1.8</maven.compiler.source>  
-        <maven.compiler.target>1.8</maven.compiler.target>  
-        <maven.compiler.showWarnings>true</maven.compiler.showWarnings>  
-        <maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>  
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>  
-  
-        <commons-lang3.version>3.4</commons-lang3.version>  
-        <commons-io.version>2.4</commons-io.version>  
-        <commons-primitives.version>1.0</commons-primitives.version>  
-  
-        <spring.version>4.1.6.RELEASE</spring.version>  
-        <logback-classic.version>1.1.3</logback-classic.version>  
-        <log4j.version>1.2.17</log4j.version>  
-        <slf4j-api.version>1.7.12</slf4j-api.version>  
-  		<mybatis-generator.version>1.3.2</mybatis-generator.version>
-    </properties> 
-	
-	
+
+	<!--加入统一依赖包的版本控制 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.showWarnings>true</maven.compiler.showWarnings>
+		<maven.compiler.showDeprecation>true</maven.compiler.showDeprecation>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<commons-io.version>2.4</commons-io.version>
+		<commons-primitives.version>1.0</commons-primitives.version>
+
+		<spring.version>4.1.6.RELEASE</spring.version>
+		<logback-classic.version>1.1.3</logback-classic.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j-api.version>1.7.12</slf4j-api.version>
+		<mybatis-generator.version>1.3.2</mybatis-generator.version>
+	</properties>
+
+
 
 	<name>auto-generated-mybatis-mysql</name>
 	<description>Demo project for Spring Boot</description>
@@ -38,7 +38,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.8.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
 
@@ -73,21 +73,27 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--禁用插件,改为用包依赖形式  -->
+		<dependency>
+			<groupId>org.mybatis.generator</groupId>
+			<artifactId>mybatis-generator-maven-plugin</artifactId>
+			<version>1.3.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-		<!--  插入mybatis-generator插件-->
-		    <plugin>  
-                <groupId>org.mybatis.generator</groupId>  
-                <artifactId>mybatis-generator-maven-plugin</artifactId>  
-                <version>${mybatis-generator.version}</version>  
-                <configuration>  
-                    <verbose>false</verbose>  
-                    <overwrite>false</overwrite>  
-                </configuration>  
-            </plugin>  
-            
+			<!-- 插入mybatis-generator插件 -->
+		<!-- 	<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>${mybatis-generator.version}</version>
+				<configuration>
+					<verbose>false</verbose>
+					<overwrite>false</overwrite>
+				</configuration>
+			</plugin> -->
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

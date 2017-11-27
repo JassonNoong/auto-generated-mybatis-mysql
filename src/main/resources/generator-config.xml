@@ -2,27 +2,42 @@
 <!DOCTYPE generatorConfiguration PUBLIC   
 "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
-	<generatorConfiguration>
-		<classPathEntry
-			location="E:\Eclipse\Repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
-		<context id="context1" targetRuntime="MyBatis3">
-			<commentGenerator>
-				<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
-				<property name="suppressAllComments" value="true" />
-				<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
-			</commentGenerator>
-			<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-				connectionURL="jdbc:mysql://localhost:3306/data?useUnicode=true&characterEncoding=UTF-8"
-				userId="root" password="123456" />
-			<javaModelGenerator targetPackage="org.share.domain.tree.entity"
-				targetProject="E:\workspace\share\share-domain\src\main\java" />
-			<sqlMapGenerator targetPackage="org.share.domain.tree.mapper"
-				targetProject="E:\workspace\share\share-domain\src\main\java" />
-			<javaClientGenerator targetPackage="org.share.domain.tree.mapper"
-				targetProject="E:\workspace\share\share-domain\src\main\java" type="XMLMAPPER" />
-			<!-- shema 数据库 tableName表明 -->
-			<table schema="data" tableName="tree" />
+<generatorConfiguration>
+	<classPathEntry
+		location="E:\Eclipse\Repository\mysql\mysql-connector-java\5.1.29\mysql-connector-java-5.1.29.jar" />
+	<context id="context1" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
+			<property name="suppressAllComments" value="false" />
+			<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
+			<!-- 注意,这里使用的是mariadb -->
+		</commentGenerator>
+		<jdbcConnection 
+			driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3307/mytatis-autogenerator-db?useUnicode=true&characterEncoding=UTF-8"
+			userId="root" password="root" />
+		<javaModelGenerator targetPackage="cn.nongdewang.demo.entity"
+			targetProject="E:\developer\git_repository\auto-generated-mybatis-mysql\src\main\java" />
+		<sqlMapGenerator targetPackage="cn.nongdewang.demo.mapper"
+			targetProject="E:\developer\git_repository\auto-generated-mybatis-mysql\src\main\java" />
+		<javaClientGenerator targetPackage="cn.nongdewang.demo.mapper"
+			targetProject="E:\developer\git_repository\auto-generated-mybatis-mysql\src\main\java"
+			type="XMLMAPPER" />
+		<!-- shema 数据库 tableName表明 -->
+		<table schema="mytatis-autogenerator-db" tableName="tree" 
+					
+		
+		/>
+		
+		<!-- table其他属性： enableCountByExample="false" 
+		enableUpdateByExample="false" 
+			enableDeleteByExample="false" 
+			enableSelectByExample="false" 
+			selectByExampleQueryId="false" -->
+		<!-- schema即为数据库名, tableName为对应的数据库表, domainObjectName是要生成的实体类, 如果想要mapper配置文件加入sql的where条件查询, 
+			可以将enableCountByExample等设为true, 这样就会生成一个对应domainObjectName的Example类, enableCountByExample等设为false时, 
+			就不会生成对应的Example类 -->
 
-		</context>
-	</generatorConfiguration>
+	</context>
+</generatorConfiguration>
 

@@ -22,7 +22,8 @@
 
 		<!-- 通过javaTypeResolver元素控制类型转化，也能继承JavaTypeResolver接口实现自己的类型转换器。 -->
 		<javaTypeResolver>
-			<property name="forceBigDecimals" value="false" /> <!--将 JDBC DECIMAL和NUMERIC解析为Integer，而不是BigDecimal -->
+			 <!--将 JDBC DECIMAL和NUMERIC解析为Integer，而不是BigDecimal -->
+			<property name="forceBigDecimals" value="false" />
 		</javaTypeResolver>
 
 		<!-- 生成模型的包名和位置 -->

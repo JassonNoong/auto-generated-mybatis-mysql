@@ -6,10 +6,12 @@
 	<classPathEntry
 		location="E:\developer\install\repository\MySQL\mysql-connector-Java\5.1.44\mysql-connector-java-5.1.44.jar" />
 	<context id="mysql" targetRuntime="MyBatis3">
-
+				<!--  将实体类序列化-->
+	<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin>
 		<commentGenerator>
 			<!-- 是否去除自动生成的注释 true：是 ： false:否 -->
 			<property name="suppressAllComments" value="false" />
+			<property name="suppressDate" value="false"/>
 		</commentGenerator>
 
 		<!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->
@@ -33,19 +35,22 @@
 			type="XMLMAPPER" />
 		<!-- shema 数据库 tableName表明 -->
 		<table schema="ttms" tableName="tms_classes"
-			nableCountByExample="false" enableUpdateByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />
-		<table schema="ttms" tableName="sys_users" nableCountByExample="false"
+		<table schema="ttms" tableName="sys_users" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false" />
-		<table schema="ttms" tableName="sys_menus" nableCountByExample="false"
+		<table schema="ttms" tableName="sys_menus" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false" />
 		<table schema="ttms" tableName="sys_role_menus"
-			nableCountByExample="false" enableUpdateByExample="false"
+			enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false" />
+			
+		
+			
 		<!-- table其他属性： enableCountByExample="false" enableUpdateByExample="false" 
 			enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false" -->
 		<!-- schema即为数据库名, tableName为对应的数据库表, domainObjectName是要生成的实体类, 如果想要mapper配置文件加入sql的where条件查询, 
@@ -57,6 +62,7 @@
 			context节点下添加<plugin type="org.mybatis.generator.plugins.SerializablePlugin"></plugin> 
 			生成的pojo类implements Serializable。 通过enableCountByExample, enableUpdateByExample, 
 			enableDeleteByExample, enableSelectByExample, selectByExampleQueryId等属性可以控制是否生成和使用xxxExample类在查询中替代模型类。 -->
+
 	</context>
 </generatorConfiguration>
 

@@ -24,6 +24,7 @@
 		<javaTypeResolver>
 			 <!--将 JDBC DECIMAL和NUMERIC解析为Integer，而不是BigDecimal -->
 			<property name="forceBigDecimals" value="false" />
+			
 		</javaTypeResolver>
 
 		<!-- 生成模型的包名和位置 -->
